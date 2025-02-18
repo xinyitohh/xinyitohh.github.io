@@ -10,15 +10,20 @@ const Projects = () => {
             {PROJECTS.map((project, index) => (
                 <div key={index} className='mb-8 flex flex-wrap lg:justify-center'>
                     <div className="w-full lg:w-1/4 ">
-                    <iframe 
-                        src={project.demo} 
-                        title={project.title}
-                        width="450"
-                        height="650"
-                        className="mb-6 rounded"
-                        allowFullScreen
-                        style={{position: 'relative', zIndex: 20, border: '2px solid #000'}}
-                    ></iframe>
+                    <div className="w-full">
+                        <iframe
+                            src={project.demo}
+                            title={project.title}
+                            width="365"  // For mobile
+                            height="650"
+                            className="mb-6 rounded lg:w-[450px] mx-auto"
+                            allowFullScreen
+                            style={{
+                            border: '2px solid #000',
+                            }}
+                        />
+                    </div>
+
                     </div>
                     <div className="w-full max-w-xl lg:w-3/4  lg:ml-44">
                         <h6 className="mb-2 font-semibold text-gray-600">{project.title}</h6>
