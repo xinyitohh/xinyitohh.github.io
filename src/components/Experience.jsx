@@ -8,12 +8,12 @@ const Experience = () => {
                 {EXPERIENCES.map((experience, index) => (
                     <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
                         <div className="w-full lg:w-1/4">
-                            <p className="mb-2 text-sm text-neutral-500">{experience.year}</p>
+                            <p className="mb-2 text-base text-neutral-500">{experience.year}</p>
                         </div>
                         <div className="w-full max-w-xl lg:w-3/4">
-                            <h6 className="mb-2 font-semibold text-gray-700">
+                            <h6 className="mb-2 font-semibold text-gray-700 text-xl">
                                 {experience.role} <br/>-{" "}
-                                <span className="text-sm text-gray-700">
+                                <span className="text-lg text-gray-700">
                                     {experience.company}
                                 </span>
                             </h6>
