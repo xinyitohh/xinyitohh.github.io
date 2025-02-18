@@ -30,6 +30,7 @@ const Navbar = () => {
                     className="hover:text-gray-800 transition-colors duration-300"
                 >
                     <FaGithub />
+                    
                 </a>
             </div>
         </nav>
