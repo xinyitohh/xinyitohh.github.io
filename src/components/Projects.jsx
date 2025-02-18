@@ -14,13 +14,11 @@ const Projects = () => {
                         <iframe
                             src={project.demo}
                             title={project.title}
-                            width="365"  // For mobile
+                            width="340"  // For mobile
                             height="650"
                             className="mb-6 rounded lg:w-[450px] mx-auto"
                             allowFullScreen
-                            style={{
-                            border: '2px solid #000',
-                            }}
+                            style={{position: 'relative', zIndex: 20, border: '2px solid #000'}}
                         />
                     </div>
 
