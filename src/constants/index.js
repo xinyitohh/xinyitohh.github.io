@@ -33,7 +33,7 @@ Took on two system-wide features toward the end of the internship — text size 
     year: "Jan 2026 – Present",
     role: "STEM Coding Tutor",
     company: "Twin Bears Art Studio",
-    description: `Delivered Coding & Crafting STEM classes using micro:bit for international school primary students.`,
+    description: `Delivered Coding & Crafting STEM ECA class using micro:bit for international school primary students.`,
     technologies: ["micro:bit", "STEM Education"],
   },
   {
@@ -44,7 +44,7 @@ Took on two system-wide features toward the end of the internship — text size 
     description: `Pioneered delivery of a pilot Python course; redesigned teaching materials to improve student concept retention and engagement.
 
 Taught Python programming to primary students via live Zoom. Introduced basic AI concepts and computational thinking.`,
-    technologies: ["Python", "Teaching", "Curriculum Design"],
+    technologies: ["Python", "Teaching"],
   },
   {
     type: "other",
@@ -107,6 +107,48 @@ AI chatbot with Amazon Lex + Bedrock (Claude) for health Q&A and appointment boo
     technologies: ["Flutter", "Firebase", "Provider"],
     demo: "https://food-delivery-e2de7.web.app/",
     github: "https://github.com/xinyitohh/Flutter_Food_Ordering",
+  },
+];
+
+export const BOOKS = [
+  {
+    title: "Spring Start Here",
+    author: "Laurențiu Spilcă",
+    status: "reading",
+    cover: "https://www.oreilly.com/covers/urn:orm:book:9781617298691/300w/",
+  },
+  {
+    title: "Head First Design Patterns",
+    author: "Eric Freeman et al.",
+    status: "reading",
+    cover: "https://www.oreilly.com/covers/urn:orm:book:9781492077992/300w/",
+  },
+  {
+    title: "Grokking Algorithms",
+    author: "Aditya Bhargava",
+    status: "read",
+    cover:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFtIwyxZO45WugxJXK4P1VfnZzDO-U2PaypA&s",
+  },
+  {
+    title: "System Design Interview",
+    author: "Alex Xu",
+    status: "queued",
+    cover:
+      "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1592265780i/54109255.jpg",
+  },
+  {
+    title: "Head First Software Architecture",
+    author: "Neal Ford et al.",
+    status: "queued",
+    cover: "https://www.oreilly.com/covers/urn:orm:book:9781098134341/300w/",
+  },
+  {
+    title: "Flutter Engineering",
+    author: "Majid Hajian",
+    status: "queued",
+    cover:
+      "https://m.media-amazon.com/images/I/4112c8SJ2OL._SY445_SX342_FMwebp_.jpg",
   },
 ];
 
