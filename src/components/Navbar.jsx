@@ -1,37 +1,30 @@
-import logo from "/assets/a.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
     return (
-        <nav className="mb-20 flex items-center justify-between py-6 relative z-50"> 
-            {/* Logo */}
-            <div className="flex flex-shrink-0 items-center">
-                <a href="/" className="flex items-center">
-                    <img className="mx-2 w-10" src={logo} alt="Kevin Rush Logo" />
-                </a>
-            </div>
-            
-            {/* Social media icons */}
-            <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-                <a 
-                    href="https://www.linkedin.com/in/toh-xin-yi-" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn Profile"
-                    className="hover:text-blue-500 transition-colors duration-300"
-                >
-                    <FaLinkedin />
-                </a>
-                <a 
-                    href="https://github.com/xinyitohh" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="GitHub Profile"
-                    className="hover:text-gray-800 transition-colors duration-300"
-                >
-                    <FaGithub />
-                    
-                </a>
+        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+            <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+                <span className="font-semibold text-gray-900 tracking-tight">Toh Xin Yi</span>
+                <div className="flex items-center gap-5 text-xl text-gray-400">
+                    <a
+                        href="https://www.linkedin.com/in/toh-xin-yi-"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="hover:text-blue-500 transition-colors"
+                    >
+                        <FaLinkedin />
+                    </a>
+                    <a
+                        href="https://github.com/xinyitohh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="hover:text-gray-900 transition-colors"
+                    >
+                        <FaGithub />
+                    </a>
+                </div>
             </div>
         </nav>
     );

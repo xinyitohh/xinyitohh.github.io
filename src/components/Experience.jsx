@@ -1,37 +1,57 @@
 import { EXPERIENCES } from "../constants";
 
+const ExperienceItem = ({ experience, accent }) => (
+    <div className="relative pl-8 pb-10 last:pb-0">
+        <div className={`absolute left-0 top-1.5 w-3 h-3 rounded-full border-2 border-white ring-2 ${accent ? 'bg-indigo-500 ring-indigo-200' : 'bg-gray-400 ring-gray-200'}`} />
+        <div className="absolute left-[5px] top-4 bottom-0 w-px bg-gray-100 last:hidden" />
+        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 mb-1">
+            <h4 className="font-semibold text-gray-900">{experience.role}</h4>
+            <span className="hidden sm:inline text-gray-300 mx-1">·</span>
+            <span className="text-gray-600 text-sm">{experience.company}</span>
+        </div>
+        <p className="text-xs text-gray-400 mb-3">{experience.year}</p>
+        <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-3">
+            {experience.description}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+            {experience.technologies.map((tech, i) => (
+                <span
+                    key={i}
+                    className="px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
+                >
+                    {tech}
+                </span>
+            ))}
+        </div>
+    </div>
+);
+
 const Experience = () => {
+    const workExp = EXPERIENCES.filter(e => e.type === 'work');
+    const otherExp = EXPERIENCES.filter(e => e.type === 'other');
+
     return (
-        <div className="border-b border-neutral-900 pb-4">
-            <h1 className="my-20 text-center text-4xl text-gray-900">Experience</h1>
-            <div>
-                {EXPERIENCES.map((experience, index) => (
-                    <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-                        <div className="w-full lg:w-1/4">
-                            <p className="mb-2 text-base text-neutral-500">{experience.year}</p>
-                        </div>
-                        <div className="w-full max-w-xl lg:w-3/4">
-                            <h6 className="mb-2 font-semibold text-gray-700 text-xl">
-                                {experience.role} <br/>-{" "}
-                                <span className="text-lg text-gray-700">
-                                    {experience.company}
-                                </span>
-                            </h6>
-                            <p className="mb-4 text-neutral-600 whitespace-pre-line text-justify">
-                                {experience.description}
-                            </p>
-                            {experience.technologies.map((technology, index) => (
-                                <span 
-                                    key={index}
-                                    className="mr-2 mt-4 rounded bg-neutral-400 px-2 py-1 text-sm font-medium text-white">
-                                        {technology}
-                                    </span>
-                            ))}
-                        </div>
-                    </div>
+        <section className="max-w-4xl mx-auto px-6 py-16 border-t border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-900 mb-10">Experience</h2>
+
+            <div className="mb-10">
+                <p className="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-6">
+                    Work Experience
+                </p>
+                {workExp.map((exp, i) => (
+                    <ExperienceItem key={i} experience={exp} accent={true} />
                 ))}
             </div>
-        </div>
+
+            <div>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
+                    Part-time Experience
+                </p>
+                {otherExp.map((exp, i) => (
+                    <ExperienceItem key={i} experience={exp} accent={false} />
+                ))}
+            </div>
+        </section>
     );
 };
 
