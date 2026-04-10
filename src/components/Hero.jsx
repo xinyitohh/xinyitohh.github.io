@@ -1,4 +1,5 @@
 import pic1 from "/assets/toh_xin_yi.jpg";
+import pic2 from "/assets/toh_xin_yi_3.jpeg";
 import { HERO_CONTENT } from "../constants/index";
 
 const Hero = () => {
@@ -43,7 +44,7 @@ const Hero = () => {
         </div>
         <div className="flex-shrink-0">
           <img
-            src={pic1}
+            src={pic2}
             alt="Toh Xin Yi"
             className="w-48 h-48 lg:w-56 lg:h-56 rounded-full object-cover ring-4 ring-indigo-100"
           />
