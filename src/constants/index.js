@@ -68,10 +68,10 @@ export const PROJECTS = [
 
 The system features a Flutter mobile app for consumer searches, a Next.js admin dashboard for manual listing management, and a Spring Boot REST API backend. To ensure data integrity, I am designing a community-driven validation engine featuring statistical anomaly detection (filtering extreme outliers), user trust scores, and peer reviews.
 
-Data is managed using serverless PostgreSQL (NeonDB) for product and price history, Elasticsearch for robust full-text search, and Redis for caching. Mobile CI/CD pipelines are automated via Codemagic for iOS builds, utilizing AltStore for sideloading deployment and ngrok for local webhook testing.
+Data is managed using serverless PostgreSQL (NeonDB) for product and price history, Elasticsearch for robust full-text search, and Redis for caching. Mobile CI/CD pipelines are automated via Codemagic for iOS builds, utilizing AltStore for sideloading deployment, ngrok for local webhook testing, and Sentry for real-time error tracking and performance monitoring.
 
 Currently integrating Gemini AI to power a RAG-based chatbot utilizing Text-to-SQL for natural language price queries, alongside exploring AI-assisted product detection from user photo submissions.`,
-    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js web on the frontend, Spring Boot REST API backend, and NeonDB (PostgreSQL) + Elasticsearch + Redis for data and search. Deployed across Railway (backend), Vercel (Next.js frontend), and DigitalOcean (Elasticsearch + Redis). Gemini AI integration in progress for RAG-powered natural language price queries and AI-assisted product detection.`,
+    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js web on the frontend, Spring Boot REST API backend, and NeonDB (PostgreSQL) + Elasticsearch + Redis for data and search. Deployed across Railway (backend), Vercel (Next.js frontend), and DigitalOcean (Elasticsearch + Redis). Integrated with Sentry for application monitoring. Gemini AI integration in progress for RAG-powered natural language price queries and AI-assisted product detection.`,
     technologies: [
       "Flutter",
       "Spring Boot",
@@ -81,6 +81,7 @@ Currently integrating Gemini AI to power a RAG-based chatbot utilizing Text-to-S
       "Redis",
       "Gemini AI",
       "Codemagic",
+      "Sentry",
       "Railway",
       "Vercel",
       "DigitalOcean",
@@ -91,7 +92,8 @@ Currently integrating Gemini AI to power a RAG-based chatbot utilizing Text-to-S
   {
     featured: true,
     title: "MediBook — Healthcare Appointment System",
-    subtitle: "Designing and Developing Applications on Cloud (DDAC) · 2026 · Ongoing",
+    subtitle:
+      "Designing and Developing Applications on Cloud (DDAC) · 2026 · Ongoing",
     description: `MediBook is a highly scalable, production-ready healthcare appointment system built as a comprehensive cloud computing project.
 
 Intentionally engineered to go far beyond baseline academic requirements, I architected this project to simulate a real-world, enterprise-grade AWS environment rather than a basic deployment. Patients can securely book appointments, interact with an AI-powered health assistant, and receive automated reminders. 
@@ -182,6 +184,7 @@ export const SKILLS = {
     "Docker",
     "GitHub Actions",
     "Codemagic",
+    "Sentry",
   ],
   "Cloud (AWS)": [
     "Elastic Beanstalk",
