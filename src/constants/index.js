@@ -1,23 +1,26 @@
 import taggoArchitecture from "/assets/projects/taggo-architecture.png";
 import mediBookArchitecture from "/assets/projects/medibook-architecture.png";
 
-export const HERO_CONTENT = `I interned at iFAST Global Hub AI building Flutter features for real production banking apps. Now building Taggo, a crowdsourced grocery price comparison platform, as my FYP.`;
+export const HERO_CONTENT = `I interned at iFAST Global Hub AI building Flutter features for production banking apps. Currently building Taggo, a full-stack crowdsourced grocery price comparison platform, as my Final Year Project.`;
 
-export const ABOUT_TEXT = `Final year SE student at APU. I interned at iFAST building Flutter features for real banking apps, which taught me a lot about writing code that has to hold up. I'm passionate about what I do and love inspiring others with it. Outside of coding, I like to be in natural surroundings ^_^`;
+export const ABOUT_TEXT = `Final year Software Engineering student at APU. I interned at iFAST building Flutter features for enterprise banking apps, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
+Outside of coding, I like to be in natural surroundings ^_^`;
 
-// type: "work" → shown under Work Experience
-// type: "other" → shown under Part-time & Teaching
 export const EXPERIENCES = [
   {
     type: "work",
     year: "May 2025 – Sep 2025",
     role: "Mobile Application Developer Intern",
     company: "iFAST Global Hub AI",
-    description: `Worked on two live fintech apps simultaneously — iFAST Global Bank and FSMOne Singapore — shipping features, UI revamps, and bug fixes across full sprint cycles from ticket to deployment.
+    description: `Developed and shipped production-ready features for two major fintech applications: iFAST Global Bank and FSMOne Singapore.
 
-Contributed to a wide range of modules: currency converter, beneficiary flow, customer feedback, debit card dispute, pre-login revamp, watchlist management, bond market orders, and more.
+Collaborated within Agile sprint cycles to deliver diverse modules, including a currency converter, beneficiary flows, bond market range orders, and account opening enhancements. 
 
-Took on two system-wide features toward the end of the internship — text size accessibility settings and dark mode — which required migrating hardcoded colours across 200+ UI pages to a theme-based approach.`,
+Proactively resolved critical technical blockers, notably investigating and fixing a native Android SDK 35/36 edge-to-edge configuration issue that had stalled the wider team.
+
+Drove UX improvements by conceptualizing and implementing a seamless, in-place FAQ search experience, replacing a legacy popup design with a smooth, modern scroll-to-top transition that was deployed to production.
+
+Led a large-scale codebase refactoring initiative to support Dark Mode and dynamic text accessibility, migrating over 200+ legacy screens to a standardized, theme-based architecture.`,
     technologies: ["Flutter", "Dart", "Jira", "GitLab", "Agile/Scrum"],
   },
   {
@@ -25,7 +28,7 @@ Took on two system-wide features toward the end of the internship — text size 
     year: "Mar 2026 – Present",
     role: "Coding & Robotic Trainer",
     company: "Eduvision",
-    description: `Teach coding and robotics ECA class to primary students in an international school using VEXcode VR.`,
+    description: `Teach a coding and robotics ECA class to primary students in an international school using VEXcode VR.`,
     technologies: ["VEXcode VR", "Robotics", "STEM Education"],
   },
   {
@@ -33,7 +36,7 @@ Took on two system-wide features toward the end of the internship — text size 
     year: "Jan 2026 – Present",
     role: "STEM Coding Tutor",
     company: "Twin Bears Art Studio",
-    description: `Delivered Coding & Crafting STEM ECA class using micro:bit for international school primary students.`,
+    description: `Deliver a Coding & Crafting STEM ECA class using micro:bit for international school primary students.`,
     technologies: ["micro:bit", "STEM Education"],
   },
   {
@@ -41,9 +44,9 @@ Took on two system-wide features toward the end of the internship — text size 
     year: "Nov 2025 – Feb 2026",
     role: "Part-Time Python Tutor",
     company: "Elixir Lab · Remote (Singapore)",
-    description: `Pioneered delivery of a pilot Python course; redesigned teaching materials to improve student concept retention and engagement.
+    description: `Pioneered the curriculum for a new pilot Python coding program at a traditional tuition centre. 
 
-Taught Python programming to primary students via live Zoom. Introduced basic AI concepts and computational thinking.`,
+Created engaging slide decks and project-based lessons to simplify complex concepts for primary students during the program's trial run. Introduced basic AI concepts and computational thinking via live Zoom classes.`,
     technologies: ["Python", "Teaching"],
   },
   {
@@ -51,62 +54,77 @@ Taught Python programming to primary students via live Zoom. Introduced basic AI
     year: "Apr 2024 – Dec 2025",
     role: "Enterprise Student Ambassador",
     company: "Asia Pacific University",
-    description: `Mentored student startup teams using entrepreneurial design thinking; co-coordinated Startup Weekend and other key innovation events.
-
-Built technical Proof-of-Concepts (POCs) using Flutter, n8n, and Twilio to validate business viability for early-stage student startups.`,
-    technologies: ["Flutter", "n8n", "Twilio", "Communication"],
+    description: `Supported the planning and execution of campus entrepreneurship initiatives, including Startup Weekend. Assisted with event logistics, participant coordination, and ensuring smooth operations for various student innovation events.`,
+    technologies: ["Event Coordination", "Logistics", "Teamwork"],
   },
 ];
 
-// featured: true → rendered as a full-width highlighted card
-// img: replace with architecture diagram once available
 export const PROJECTS = [
   {
     featured: true,
     title: "Taggo — Grocery Price Comparison Platform",
-    subtitle: "Final Year Project · Ongoing",
-    description: `Taggo is a crowdsourced grocery price comparison platform — built because grocery prices in Malaysia vary a lot across supermarkets and there's no good way to compare them without physically going.
+    subtitle: "Final Year Project · 2026 · Ongoing",
+    description: `Taggo is a full-stack, crowdsourced grocery price comparison platform designed to solve the problem of fragmented supermarket pricing in Malaysia.
 
-The platform has three parts: a Flutter mobile app for consumers to search and compare prices across stores, a Next.js admin dashboard for managing listings and reviewing submissions, and a Spring Boot backend handling REST APIs and the crowdsource contribution flow with validation logic.
+The system features a Flutter mobile app for consumer searches, a Next.js admin dashboard for manual listing management, and a Spring Boot REST API backend. To ensure data integrity, I am designing a community-driven validation engine featuring statistical anomaly detection (filtering extreme outliers), user trust scores, and peer reviews.
 
-PostgreSQL stores product data, price history, and multi-store comparisons. Elasticsearch powers full-text product search, Redis handles caching. Deployed across Railway, Vercel, and DigitalOcean.
+Data is managed using serverless PostgreSQL (NeonDB) for product and price history, Elasticsearch for robust full-text search, and Redis for caching. Mobile CI/CD pipelines are automated via Codemagic for iOS builds, utilizing AltStore for sideloading deployment and ngrok for local webhook testing.
 
-Currently integrating Gemini AI for a RAG-powered chatbot that lets users query prices in natural language. Also exploring AI-assisted product detection from user photo submissions.`,
-    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js web on the frontend, Spring Boot REST API backend, and PostgreSQL + Elasticsearch + Redis for data and search. Deployed across Railway (backend), Vercel (Next.js frontend), and DigitalOcean (Elasticsearch + Redis). Gemini AI integration in progress for RAG-powered natural language price queries and AI-assisted product detection from photo submissions.`,
-    technologies: ["Flutter", "Spring Boot", "Next.js", "PostgreSQL", "Elasticsearch", "Redis", "Gemini AI", "RAG", "Railway", "Vercel", "DigitalOcean"],
-    screenshots: [], // add paths when available e.g. ["/assets/projects/taggo-1.jpg"]
+Currently integrating Gemini AI to power a RAG-based chatbot utilizing Text-to-SQL for natural language price queries, alongside exploring AI-assisted product detection from user photo submissions.`,
+    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js web on the frontend, Spring Boot REST API backend, and NeonDB (PostgreSQL) + Elasticsearch + Redis for data and search. Deployed across Railway (backend), Vercel (Next.js frontend), and DigitalOcean (Elasticsearch + Redis). Gemini AI integration in progress for RAG-powered natural language price queries and AI-assisted product detection.`,
+    technologies: [
+      "Flutter",
+      "Spring Boot",
+      "Next.js",
+      "NeonDB",
+      "Elasticsearch",
+      "Redis",
+      "Gemini AI",
+      "Codemagic",
+      "Railway",
+      "Vercel",
+      "DigitalOcean",
+    ],
+    screenshots: [],
     architectureImg: taggoArchitecture,
   },
   {
     featured: true,
     title: "MediBook — Healthcare Appointment System",
-    subtitle: "Cloud Architecture & Application Development (DDAC) · 2026 · Ongoing",
-    description: `MediBook is a healthcare appointment system built for DDAC — a module where the lecturer set a real-world standard: build something production-deployable and put it on your CV. Live at medibook.xinyitoh.com.
+    subtitle: "Designing and Developing Applications on Cloud (DDAC) · 2026 · Ongoing",
+    description: `MediBook is a highly scalable, production-ready healthcare appointment system built as a comprehensive cloud computing project.
 
-Patients can book appointments, chat with an AI assistant for health Q&A, and receive automated appointment reminders. Doctors manage schedules and patient records. The system extracts clinical entities from uploaded patient reports using AWS Comprehend Medical.`,
-    architectureDesc: `ASP.NET backend containerised with Docker, stored in Amazon ECR, deployed to Elastic Beanstalk. React frontend on S3 + CloudFront. GitHub Actions CI/CD pipeline runs on every merge to main — builds Docker image, pushes to ECR, deploys to Elastic Beanstalk, uploads React build to S3, invalidates both CloudFront caches. No manual steps.
+Intentionally engineered to go far beyond baseline academic requirements, I architected this project to simulate a real-world, enterprise-grade AWS environment rather than a basic deployment. Patients can securely book appointments, interact with an AI-powered health assistant, and receive automated reminders. 
 
-AI chatbot with Amazon Lex + Bedrock (Claude) for health Q&A and appointment booking intents. Comprehend Medical extracts clinical entities from uploaded patient reports. Serverless reminder pipeline: EventBridge (daily cron) → Lambda → SQS → Lambda → SNS/SES. RDS PostgreSQL, S3 for file uploads, CloudWatch for monitoring.`,
-    technologies: ["AWS", "ASP.NET", "React", "Docker", "GitHub Actions", "Amazon Lex", "Bedrock", "Comprehend Medical", "EventBridge", "Lambda", "SQS", "RDS", "CloudFront", "CI/CD"],
+The application pushes technical boundaries by utilizing AWS Comprehend Medical to automatically extract and structure clinical entities from uploaded patient reports, streamlining data entry for medical professionals.`,
+    architectureDesc: `The architecture features an ASP.NET backend containerised via Docker, stored in Amazon ECR, and deployed to Elastic Beanstalk. The React frontend is hosted on S3 and distributed via CloudFront. A fully automated GitHub Actions CI/CD pipeline handles zero-touch deployments and CloudFront cache invalidations.
+
+The system heavily utilizes AWS Serverless components: an AI chatbot built with Amazon Lex and Bedrock (Claude) routed through API Gateway and Lambda; clinical entity extraction using Comprehend Medical; and a resilient automated reminder pipeline leveraging EventBridge (cron), SQS queues, Lambda, and SNS/SES. Data is stored in RDS PostgreSQL with S3 for secure file uploads and CloudWatch for comprehensive performance monitoring and X-Ray tracing.`,
+    technologies: [
+      "AWS",
+      "ASP.NET",
+      "React",
+      "Docker",
+      "GitHub Actions",
+      "Amazon Lex",
+      "Bedrock",
+      "Comprehend Medical",
+      "EventBridge",
+      "Lambda",
+      "SQS",
+      "RDS",
+      "CloudFront",
+      "CI/CD",
+    ],
     demo: "https://medibook.xinyitoh.com",
-    screenshots: [], // add paths when available e.g. ["/assets/projects/medibook-1.jpg"]
+    screenshots: [],
     architectureImg: mediBookArchitecture,
   },
   {
-    title: "AI Chatbot",
+    title: "Direct Booking AI Assistant POC",
     description:
-      "A conversational AI chatbot with image support and chat history, built with Flutter and Gemini AI. Learnt API integration, local storage with Hive, and state management using Provider.",
-    technologies: ["Flutter", "Gemini AI", "Provider", "Hive"],
-    demo: "https://flutter-chatbot-f794f.web.app",
-    github: "https://github.com/xinyitohh/Flutter_AI_Chatbot_Beginner",
-  },
-  {
-    title: "Food Ordering System",
-    description:
-      "A food ordering app with cart and checkout flow. Learnt Firebase Authentication, Firestore, and state management.\n\nDemo account: a@gmail.com / 123456",
-    technologies: ["Flutter", "Firebase", "Provider"],
-    demo: "https://food-delivery-e2de7.web.app/",
-    github: "https://github.com/xinyitohh/Flutter_Food_Ordering",
+      "Identified a business pain point for a local glamping hostel losing 20% of revenue to third-party booking platforms. Pitched and developed a technical Proof-of-Concept (POC) for a direct booking flow featuring a WhatsApp AI chatbot to automate inquiries and reservations.",
+    technologies: ["Flutter", "n8n", "Twilio", "WhatsApp API"],
   },
 ];
 
@@ -153,8 +171,40 @@ export const BOOKS = [
 ];
 
 export const SKILLS = {
-  "Languages": ["Python", "Java", "Dart", "JavaScript", "C++", "SQL", "HTML/CSS"],
-  "Frameworks & Tools": ["Flutter", "Spring Boot", "Next.js", "React", "ASP.NET", "Tailwind CSS", "Docker", "GitHub Actions"],
-  "Cloud (AWS)": ["Elastic Beanstalk", "S3", "RDS", "CloudFront", "Route 53", "Lambda", "API Gateway", "Lex", "Bedrock", "Comprehend Medical", "EventBridge", "SQS", "SNS/SES", "CloudWatch"],
-  "Concepts": ["Agile/Scrum", "RESTful APIs", "CI/CD", "Serverless Architecture", "Cloud-Native Design", "OOP"],
+  Languages: ["Python", "Java", "Dart", "JavaScript", "C++", "SQL", "HTML/CSS"],
+  "Frameworks & Tools": [
+    "Flutter",
+    "Spring Boot",
+    "Next.js",
+    "React",
+    "ASP.NET",
+    "Tailwind CSS",
+    "Docker",
+    "GitHub Actions",
+    "Codemagic",
+  ],
+  "Cloud (AWS)": [
+    "Elastic Beanstalk",
+    "S3",
+    "RDS",
+    "CloudFront",
+    "Route 53",
+    "Lambda",
+    "API Gateway",
+    "Lex",
+    "Bedrock",
+    "Comprehend Medical",
+    "EventBridge",
+    "SQS",
+    "SNS/SES",
+    "CloudWatch",
+  ],
+  Concepts: [
+    "Agile/Scrum",
+    "RESTful APIs",
+    "CI/CD",
+    "Serverless Architecture",
+    "Cloud-Native Design",
+    "OOP",
+  ],
 };

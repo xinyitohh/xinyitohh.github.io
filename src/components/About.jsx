@@ -1,5 +1,5 @@
-import pic1 from '/assets/toh_xin_yi_2.jpg';
-import nature from '/assets/nature.jpg';
+import pic1 from "/assets/toh_xin_yi_2.jpg";
+import nature from "/assets/nature.jpg";
 import { ABOUT_TEXT } from "../constants/index";
 
 const About = () => {
@@ -12,7 +12,9 @@ const About = () => {
           alt="Toh Xin Yi"
           className="w-28 h-28 rounded-2xl object-cover flex-shrink-0 self-start"
         />
-        <p className="text-gray-600 leading-relaxed text-base flex-1">{ABOUT_TEXT}</p>
+        <p className="text-gray-600 leading-7 text-base flex-1 whitespace-pre-wrap">
+          {ABOUT_TEXT}
+        </p>
         <img
           src={nature}
           alt="nature"
