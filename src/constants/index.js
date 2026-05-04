@@ -172,6 +172,16 @@ export const BOOKS = [
   },
 ];
 
+export const CERTIFICATIONS = [
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    issued: "May 2026",
+    badgeUrl: "https://www.credly.com/badges/16677254-c540-41c6-b49f-79f7101629e8/public_url",
+    badgeImg: "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+  },
+];
+
 export const SKILLS = {
   Languages: ["Python", "Java", "Dart", "JavaScript", "C++", "SQL", "HTML/CSS"],
   "Frameworks & Tools": [
