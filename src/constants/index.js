@@ -14,6 +14,13 @@ import taggoAdminPrices from "/assets/projects/taggo/admin-prices.png";
 import taggoMerchantDashboard from "/assets/projects/taggo/merchant-dashboard.png";
 import taggoMerchantAnalytics from "/assets/projects/taggo/merchant-analytics.png";
 
+import mediBookAdmin from "/assets/projects/medibook/medibook_admin.png";
+import mediBookNotification from "/assets/projects/medibook/medibook_notification.png";
+import mediBookChatbot1 from "/assets/projects/medibook/medibook_chatbot1.png";
+import mediBookChatbot2 from "/assets/projects/medibook/medibook_chatbot2.png";
+import mediBookChatbot3 from "/assets/projects/medibook/medibook_chatbot3.png";
+import mediBookChatbot4 from "/assets/projects/medibook/medibook_chatbot4.png";
+
 export const HERO_CONTENT = `Final-year Software Engineering student (CGPA 3.59) with production internship experience at iFAST Global Hub AI, shipping Flutter features across two live fintech apps used across Singapore and UK.`;
 
 export const ABOUT_TEXT = `Final year Software Engineering student at APU (CGPA 3.59). I interned at iFAST Global Hub AI building Flutter features for enterprise banking apps across Singapore and the UK, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
@@ -105,18 +112,18 @@ Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL f
       "Vercel",
     ],
     screenshots: [
-      taggoMobileHome,
-      taggoMobileSearch,
-      taggoMobileBarcode,
-      taggoMobileProduct,
-      taggoMobileChatbot,
-      taggoMobileShoppingList,
-      taggoMobileOptimization,
-      taggoAdminDashboard,
-      taggoAdminProducts,
-      taggoAdminPrices,
-      taggoMerchantDashboard,
-      taggoMerchantAnalytics,
+      { src: taggoMobileHome, label: "Compare prices across supermarkets", device: "mobile" },
+      { src: taggoMobileSearch, label: "Instant search with Elasticsearch", device: "mobile" },
+      { src: taggoMobileBarcode, label: "Scan barcodes for instant results", device: "mobile" },
+      { src: taggoMobileProduct, label: "Product details", device: "mobile" },
+      { src: taggoMobileChatbot, label: "Gemini AI chatbot with Text-to-SQL", device: "mobile" },
+      { src: taggoMobileShoppingList, label: "Smart shopping list management", device: "mobile" },
+      { src: taggoMobileOptimization, label: "Shopping lists optimization", device: "mobile" },
+      { src: taggoAdminDashboard, label: "Admin dashboard", device: "desktop" },
+      { src: taggoAdminProducts, label: "Product management", device: "desktop" },
+      { src: taggoAdminPrices, label: "Price monitoring & management", device: "desktop" },
+      { src: taggoMerchantDashboard, label: "Merchant dashboard with insights", device: "desktop" },
+      { src: taggoMerchantAnalytics, label: "Sales analytics & reporting", device: "desktop" },
     ],
     architectureImg: taggoArchitecture,
   },
@@ -151,7 +158,14 @@ AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking
       "CI/CD",
     ],
     demo: "https://medibook.xinyitoh.com",
-    screenshots: [],
+    screenshots: [
+      { src: mediBookChatbot1, label: "AI chatbot", device: "desktop" },
+      { src: mediBookChatbot2, label: "Symptoms identification", device: "desktop" },
+      { src: mediBookChatbot3, label: "Select specialty", device: "desktop" },
+      { src: mediBookChatbot4, label: "Select time slot", device: "desktop" },
+      { src: mediBookAdmin, label: "Admin dashboard", device: "desktop" },
+      { src: mediBookNotification, label: "Notifcations management", device: "desktop" },
+    ],
     architectureImg: mediBookArchitecture,
   },
   {

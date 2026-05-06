@@ -1,27 +1,58 @@
 import { useState, useEffect, useCallback } from "react";
 import { PROJECTS } from "../constants/index";
 
-const Lightbox = ({ src, alt, onClose }) => {
+const Lightbox = ({ images, currentIndex, title, onClose }) => {
+    const [index, setIndex] = useState(currentIndex);
+
     useEffect(() => {
-        const onKey = (e) => e.key === "Escape" && onClose();
+        const onKey = (e) => {
+            if (e.key === "Escape") onClose();
+            if (e.key === "ArrowLeft") setIndex((i) => Math.max(0, i - 1));
+            if (e.key === "ArrowRight") setIndex((i) => Math.min(images.length - 1, i + 1));
+        };
         window.addEventListener("keydown", onKey);
         return () => window.removeEventListener("keydown", onKey);
-    }, [onClose]);
+    }, [images.length, onClose]);
 
     return (
         <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
             onClick={onClose}
         >
-            <img
-                src={src}
-                alt={alt}
-                className="max-w-full max-h-full rounded-lg shadow-2xl object-contain"
+            <div
+                className="relative flex items-center justify-center max-w-full max-h-full"
                 onClick={(e) => e.stopPropagation()}
-            />
+            >
+                {images.length > 1 && index > 0 && (
+                    <button
+                        onClick={() => setIndex((i) => i - 1)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl transition-colors"
+                    >
+                        ‹
+                    </button>
+                )}
+                <img
+                    src={images[index]}
+                    alt={title}
+                    className="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain"
+                />
+                {images.length > 1 && index < images.length - 1 && (
+                    <button
+                        onClick={() => setIndex((i) => i + 1)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl transition-colors"
+                    >
+                        ›
+                    </button>
+                )}
+                {images.length > 1 && (
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/50 text-white/90 text-xs px-3 py-1 rounded-full">
+                        {index + 1} / {images.length}
+                    </div>
+                )}
+            </div>
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl leading-none"
+                className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl leading-none z-10"
                 aria-label="Close"
             >
                 ×
@@ -75,14 +106,30 @@ const FeaturedCard = ({ project, onZoom }) => (
         {project.screenshots?.length > 0 && (
             <div className="border-t border-gray-100 p-6">
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Screenshots</p>
-                <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory">
-                    {project.screenshots.map((src, i) => (
-                        <img
+                <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+                    {project.screenshots.map((s, i) => (
+                        <div
                             key={i}
-                            src={src}
-                            alt={`${project.title} screenshot ${i + 1}`}
-                            className="h-64 w-auto flex-shrink-0 rounded-lg border border-gray-200 snap-start object-cover"
-                        />
+                            className="flex-shrink-0 snap-start flex flex-col items-center group cursor-zoom-in"
+                            onClick={() => onZoom(project.screenshots.map(x => x.src), i, project.title)}
+                        >
+                            <div className="relative overflow-hidden rounded-lg border border-gray-200 transition-shadow duration-300 group-hover:shadow-lg">
+                                <img
+                                    src={s.src}
+                                    alt={s.label}
+                                    className="h-64 w-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                                />
+                                <div className="absolute inset-0 rounded-lg bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                                    <span className="opacity-0 group-hover:opacity-100 transition-all duration-200 bg-white/90 text-gray-700 text-xs px-2.5 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                                        <ZoomIcon />
+                                        Zoom
+                                    </span>
+                                </div>
+                            </div>
+                            <p className="text-center text-[11px] text-gray-500 mt-2.5 font-medium leading-tight max-w-[180px]">
+                                {s.label}
+                            </p>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -96,7 +143,7 @@ const FeaturedCard = ({ project, onZoom }) => (
                         {project.architectureDesc}
                     </p>
                 </div>
-                <div className="relative group cursor-zoom-in overflow-hidden" onClick={() => onZoom(project.architectureImg, `${project.title} architecture diagram`)}>
+                <div className="relative group cursor-zoom-in overflow-hidden" onClick={() => onZoom([project.architectureImg], 0, `${project.title} architecture diagram`)}>
                     <img
                         src={project.architectureImg}
                         alt={`${project.title} architecture diagram`}
@@ -156,7 +203,7 @@ const Projects = () => {
         <section className="max-w-4xl mx-auto px-6 py-16 border-t border-gray-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-10">Projects</h2>
             {featured.map((p, i) => (
-                <FeaturedCard key={i} project={p} onZoom={(src, alt) => setLightbox({ src, alt })} />
+                <FeaturedCard key={i} project={p} onZoom={(images, currentIndex, title) => setLightbox({ images, currentIndex, title })} />
             ))}
             {rest.length > 0 && (
                 <>
@@ -169,7 +216,7 @@ const Projects = () => {
                 </>
             )}
             {lightbox && (
-                <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={handleClose} />
+                <Lightbox images={lightbox.images} currentIndex={lightbox.currentIndex} title={lightbox.title} onClose={handleClose} />
             )}
         </section>
     );
