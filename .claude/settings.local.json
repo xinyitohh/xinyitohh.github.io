@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\Users\\\\U S E R\\\\Documents\\\\App Development\\\\my-website\\\\.claude\\\\worktrees\\\\nice-williams-c45d7e\\\\public\\\\assets\\\\projects\" 2>/dev/null || echo \"directory not found\" *)",
+      "Bash(ls \"/mnt/c/Users/U S E R/Documents/App Development/my-website/.claude/worktrees/nice-williams-c45d7e/assets/projects/\")",
+      "Bash(cp '/c/Users/U S E R/Desktop/Taggo_FYP_Screenshots/mobile/Figure_94_Home_Screen.JPG' assets/projects/taggo/mobile-home.jpg)",
+      "Bash(cp '/c/Users/U S E R/Desktop/Taggo_FYP_Screenshots/mobile/Figure_99_Search_Screen_a.PNG' assets/projects/taggo/mobile-search.png)",
+      "Bash(cp '/c/Users/U S E R/Desktop/Taggo_FYP_Screenshots/mobile/Figure_100_Barcode_Scanner.PNG' assets/projects/taggo/mobile-barcode.png)",
+      "Bash(cp '/c/Users/U S E R/Desktop/Taggo_FYP_Screenshots/mobile/Figure_101_Product_Detail.PNG' assets/projects/taggo/mobile-product.png)",
+      "Bash(cp '/c/Users/U S E R/Desktop/Taggo_FYP_Screenshots/mobile/Figure_105_AI_Chatbot_a.PNG' assets/projects/taggo/mobile-chatbot.png)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer",
+      "mcp__Claude_in_Chrome__find",
+      "Bash(find /tmp -name \"*.jpeg\" -newer /tmp -o -name \"*.png\" -newer /tmp 2>/dev/null | head -20 *)",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(npx playwright *)",
+      "Bash(npm run *)",
+      "Bash(sort -k5 -hr)",
+      "Bash(node -e ' *)",
+      "Bash(which ffmpeg *)",
+      "Bash(node -e \"const jimp = require\\('jimp'\\);\")",
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(pkill -f \"vite.*5174\")"
+    ]
+  }
+}
