@@ -45,13 +45,13 @@ Diagnosed an Android SDK 35/36 edge-to-edge configuration issue; independently r
   },
   {
     type: "other",
-    year: "Nov 2025 – Present",
-    role: "Part-Time Python Tutor",
-    company: "Elixir Lab · Remote (Singapore)",
-    description: `Designed and delivered a Python coding curriculum for primary school students in Singapore, introduced remotely via live Zoom classes.
+    year: "Mar 2026 – Present",
+    role: "Coding & Robotics Trainer",
+    company: "Eduvision",
+    description: `Teach a weekly coding and robotics ECA class to primary students at an international school in KL using VEXcode VR.
 
-Pioneered the curriculum for a new pilot program at a traditional tuition centre — creating engaging slide decks and project-based lessons to simplify complex concepts. Introduced AI and computational thinking concepts to beginners through interactive exercises.`,
-    technologies: ["Python", "Teaching", "Curriculum Design"],
+Guide students through virtual robotics programming challenges, building problem-solving and computational thinking skills in a fun, gamified environment.`,
+    technologies: ["VEXcode VR", "Robotics", "STEM Education"],
   },
   {
     type: "other",
@@ -65,13 +65,13 @@ Translate technical programming and electronics concepts for non-technical audie
   },
   {
     type: "other",
-    year: "Mar 2026 – Present",
-    role: "Coding & Robotics Trainer",
-    company: "Eduvision",
-    description: `Teach a weekly coding and robotics ECA class to primary students at an international school in KL using VEXcode VR.
+    year: "Nov 2025 – Feb 2026",
+    role: "Part-Time Python Tutor",
+    company: "Elixir Lab · Remote (Singapore)",
+    description: `Designed and delivered a Python coding curriculum for primary school students in Singapore, introduced remotely via live Zoom classes.
 
-Guide students through virtual robotics programming challenges, building problem-solving and computational thinking skills in a fun, gamified environment.`,
-    technologies: ["VEXcode VR", "Robotics", "STEM Education"],
+Pioneered the curriculum for a new pilot program at a traditional tuition centre — creating engaging slide decks and project-based lessons to simplify complex concepts. Introduced AI and computational thinking concepts to beginners through interactive exercises.`,
+    technologies: ["Python", "Teaching", "Curriculum Design"],
   },
   {
     type: "other",
@@ -112,18 +112,58 @@ Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL f
       "Vercel",
     ],
     screenshots: [
-      { src: taggoMobileHome, label: "Compare prices across supermarkets", device: "mobile" },
-      { src: taggoMobileSearch, label: "Instant search with Elasticsearch", device: "mobile" },
-      { src: taggoMobileBarcode, label: "Scan barcodes for instant results", device: "mobile" },
+      {
+        src: taggoMobileHome,
+        label: "Compare prices across supermarkets",
+        device: "mobile",
+      },
+      {
+        src: taggoMobileSearch,
+        label: "Instant search with Elasticsearch",
+        device: "mobile",
+      },
+      {
+        src: taggoMobileBarcode,
+        label: "Scan barcodes for instant results",
+        device: "mobile",
+      },
       { src: taggoMobileProduct, label: "Product details", device: "mobile" },
-      { src: taggoMobileChatbot, label: "Gemini AI chatbot with Text-to-SQL", device: "mobile" },
-      { src: taggoMobileShoppingList, label: "Smart shopping list management", device: "mobile" },
-      { src: taggoMobileOptimization, label: "Shopping lists optimization", device: "mobile" },
+      {
+        src: taggoMobileChatbot,
+        label: "Gemini AI chatbot with Text-to-SQL",
+        device: "mobile",
+      },
+      {
+        src: taggoMobileShoppingList,
+        label: "Smart shopping list management",
+        device: "mobile",
+      },
+      {
+        src: taggoMobileOptimization,
+        label: "Shopping lists optimization",
+        device: "mobile",
+      },
       { src: taggoAdminDashboard, label: "Admin dashboard", device: "desktop" },
-      { src: taggoAdminProducts, label: "Product management", device: "desktop" },
-      { src: taggoAdminPrices, label: "Price monitoring & management", device: "desktop" },
-      { src: taggoMerchantDashboard, label: "Merchant dashboard with insights", device: "desktop" },
-      { src: taggoMerchantAnalytics, label: "Sales analytics & reporting", device: "desktop" },
+      {
+        src: taggoAdminProducts,
+        label: "Product management",
+        device: "desktop",
+      },
+      {
+        src: taggoAdminPrices,
+        label: "Price monitoring & management",
+        device: "desktop",
+      },
+      {
+        src: taggoMerchantDashboard,
+        label: "Merchant dashboard with insights",
+        device: "desktop",
+      },
+      {
+        src: taggoMerchantAnalytics,
+        label: "Sales analytics & reporting",
+        device: "desktop",
+      },
     ],
     architectureImg: taggoArchitecture,
   },
@@ -160,11 +200,19 @@ AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking
     demo: "https://medibook.xinyitoh.com",
     screenshots: [
       { src: mediBookChatbot1, label: "AI chatbot", device: "desktop" },
-      { src: mediBookChatbot2, label: "Symptoms identification", device: "desktop" },
+      {
+        src: mediBookChatbot2,
+        label: "Symptoms identification",
+        device: "desktop",
+      },
       { src: mediBookChatbot3, label: "Select specialty", device: "desktop" },
       { src: mediBookChatbot4, label: "Select time slot", device: "desktop" },
       { src: mediBookAdmin, label: "Admin dashboard", device: "desktop" },
-      { src: mediBookNotification, label: "Notifcations management", device: "desktop" },
+      {
+        src: mediBookNotification,
+        label: "Notifcations management",
+        device: "desktop",
+      },
     ],
     architectureImg: mediBookArchitecture,
   },
@@ -223,13 +271,24 @@ export const CERTIFICATIONS = [
     name: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     issued: "May 2026",
-    badgeUrl: "https://www.credly.com/badges/16677254-c540-41c6-b49f-79f7101629e8/public_url",
-    badgeImg: "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+    badgeUrl:
+      "https://www.credly.com/badges/16677254-c540-41c6-b49f-79f7101629e8/public_url",
+    badgeImg:
+      "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
   },
 ];
 
 export const SKILLS = {
-  Languages: ["Python", "Java", "Dart", "JavaScript", "C#", "C++", "SQL", "HTML/CSS"],
+  Languages: [
+    "Python",
+    "Java",
+    "Dart",
+    "JavaScript",
+    "C#",
+    "C++",
+    "SQL",
+    "HTML/CSS",
+  ],
   "Frameworks & Tools": [
     "Flutter",
     "Spring Boot",
