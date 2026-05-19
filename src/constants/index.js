@@ -20,6 +20,8 @@ import mediBookChatbot1 from "/assets/projects/medibook/medibook_chatbot1.png";
 import mediBookChatbot2 from "/assets/projects/medibook/medibook_chatbot2.png";
 import mediBookChatbot3 from "/assets/projects/medibook/medibook_chatbot3.png";
 import mediBookChatbot4 from "/assets/projects/medibook/medibook_chatbot4.png";
+import mediBookReport1 from "/assets/projects/medibook/medibook_report1.png";
+import mediBookReport2 from "/assets/projects/medibook/medibook_report2.png";
 
 export const HERO_CONTENT = `Final-year Software Engineering student (CGPA 3.59) with production internship experience at iFAST Global Hub AI, shipping Flutter features across two live fintech apps used across Singapore and UK.`;
 
@@ -176,10 +178,14 @@ Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL f
 
 Intentionally engineered to go far beyond baseline academic requirements, the system simulates a real-world enterprise-grade AWS environment. Patients can securely book appointments, interact with an AI-powered health assistant, and receive automated appointment reminders via email.
 
-The standout feature is an AI chatbot (Amazon Lex + Bedrock Claude) that allows patients to book appointments through natural conversation — selecting specialty, choosing a doctor, and confirming a time slot, all without leaving the chat.`,
+The patient-facing AI chatbot (Amazon Lex + Bedrock Claude) enables appointment booking through natural conversation — selecting specialty, choosing a doctor, and confirming a time slot. Doctors get an AI chat assistant grounded in uploaded medical reports, powered by a Report Analysis pipeline (Textract → Comprehend Medical → Bedrock Claude) that extracts and structures clinical data for context-aware responses.`,
     architectureDesc: `ASP.NET backend containerised via Docker, stored in Amazon ECR, and deployed to Elastic Beanstalk. The React frontend is hosted on S3 and distributed globally via CloudFront, with Route 53 DNS and ACM SSL. A fully automated GitHub Actions CI/CD pipeline handles zero-touch deployments and CloudFront cache invalidations, with Terraform managing infrastructure as code (remote state on S3 + DynamoDB lock).
 
-AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking requests call back to the ASP.NET API, while complex queries fall back to Bedrock (Claude). Automated reminder pipeline: EventBridge (cron) triggers a Lambda that queues messages via SQS, which a Send Lambda consumes to dispatch emails through Resend. Data stored in RDS PostgreSQL with S3 for file uploads and CloudWatch for monitoring.`,
+Report Analysis: doctors trigger analysis on demand — the system OCRs the document via Textract, extracts medical entities and relationships via Comprehend Medical, and generates a clinical AI summary via Bedrock Claude, all saved to the database.
+
+Doctor AI chat: when chatting about a report, the system retrieves the OCR text, extracted medical entities, and AI summary, attaches them as context to Bedrock Claude, and answers the doctor's questions grounded in the report's content.
+
+Patient chatbot: Amazon Lex routes intents — booking requests invoke a Lambda that calls back to the ASP.NET API, while health Q&A and fallback intents go to Bedrock Claude. Automated reminder pipeline: EventBridge (cron) triggers a Lambda that queues messages via SQS, which a Send Lambda consumes to dispatch emails through Resend. Data stored in RDS PostgreSQL with S3 for file uploads and CloudWatch for monitoring.`,
     technologies: [
       "AWS",
       "ASP.NET",
@@ -189,6 +195,8 @@ AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking
       "Terraform",
       "Amazon Lex",
       "Bedrock",
+      "Textract",
+      "Comprehend Medical",
       "EventBridge",
       "Lambda",
       "SQS",
@@ -199,7 +207,7 @@ AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking
     ],
     demo: "https://medibook.xinyitoh.com",
     screenshots: [
-      { src: mediBookChatbot1, label: "AI chatbot", device: "desktop" },
+      { src: mediBookChatbot1, label: "Patient AI chatbot", device: "desktop" },
       {
         src: mediBookChatbot2,
         label: "Symptoms identification",
@@ -207,10 +215,12 @@ AI chatbot: Amazon Lex routes intents through API Gateway and Lambda — booking
       },
       { src: mediBookChatbot3, label: "Select specialty", device: "desktop" },
       { src: mediBookChatbot4, label: "Select time slot", device: "desktop" },
+      { src: mediBookReport1, label: "Report analysis", device: "desktop" },
+      { src: mediBookReport2, label: "Doctor AI chat", device: "desktop" },
       { src: mediBookAdmin, label: "Admin dashboard", device: "desktop" },
       {
         src: mediBookNotification,
-        label: "Notifcations management",
+        label: "Notifications management",
         device: "desktop",
       },
     ],
