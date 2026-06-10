@@ -23,9 +23,9 @@ import mediBookChatbot4 from "/assets/projects/medibook/medibook_chatbot4.png";
 import mediBookReport1 from "/assets/projects/medibook/medibook_report1.png";
 import mediBookReport2 from "/assets/projects/medibook/medibook_report2.png";
 
-export const HERO_CONTENT = `Final-year Software Engineering student (CGPA 3.59) with production internship experience at iFAST Global Hub AI, shipping Flutter features across two live fintech apps used across Singapore and UK.`;
+export const HERO_CONTENT = `Software Engineering student (CGPA 3.60) with production internship experience at iFAST Global Hub AI, building Flutter features across two live fintech apps shipped in Singapore and the UK.`;
 
-export const ABOUT_TEXT = `Final year Software Engineering student at APU (CGPA 3.59). I interned at iFAST Global Hub AI building Flutter features for enterprise banking apps across Singapore and the UK, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
+export const ABOUT_TEXT = `Software Engineering student from APU (CGPA 3.60). I interned at iFAST Global Hub AI building Flutter features for enterprise banking apps across Singapore and the UK, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
 Outside of coding, I like to be in natural surroundings ^_^`;
 
 export const EXPERIENCES = [
@@ -89,25 +89,24 @@ export const PROJECTS = [
   {
     featured: true,
     title: "Taggo — Grocery Price Comparison Platform",
-    subtitle: "Final Year Project · 2026 · Ongoing",
+    subtitle: "Final Year Project · 2026",
     description: `Taggo is a full-stack, crowdsourced grocery price comparison platform designed to solve the problem of fragmented supermarket pricing in Malaysia.
 
 The system features a Flutter mobile app for consumer searches, a Next.js admin and merchant dashboard, and a Spring Boot REST API backend. Community-driven price submissions are validated through statistical anomaly detection, user trust scores, and peer reviews.
 
-Data is managed using NeonDB (PostgreSQL) for product and price history, Elasticsearch for full-text search, and Redis for caching. Image uploads go through Cloudflare R2. Firebase Auth handles authentication across all clients. Resend powers merchant email notifications.
+Data is managed using NeonDB (PostgreSQL) for product and price history. Image uploads go through Cloudflare R2. Firebase Auth handles authentication across all clients. Resend powers merchant email notifications.
 
-Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL for natural language price queries, alongside Google Places API for store enrichment and Open Food Facts for product data. Mobile CI/CD is automated via Codemagic, with Sentry for real-time error tracking.`,
-    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js admin/merchant dashboard on the frontend (deployed on Vercel), Spring Boot REST API backend (hosted on Railway), and NeonDB (PostgreSQL) + Elasticsearch + Redis on DigitalOcean for data and search. Firebase Auth secures all clients. Cloudflare R2 handles image storage. Gemini AI powers the RAG chatbot. Google Places API and Open Food Facts enrich product and store data. Resend handles email. Sentry for observability. Codemagic + GitHub for mobile CI/CD.`,
+Features a dual-provider AI chatbot (Gemini + DeepSeek) that extracts keywords from natural language queries to search live prices, with an agentic basket planner for budget-based shopping suggestions. Also integrates Google Places API for store enrichment and Open Food Facts for product data. Mobile CI/CD is automated via Codemagic, with Sentry for real-time error tracking.`,
+    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js admin/merchant dashboard on the frontend (deployed on Vercel), Spring Boot REST API backend (hosted on Railway), and NeonDB (PostgreSQL) on the data layer. Firebase Auth secures all clients. Cloudflare R2 handles image storage. Dual-provider AI chatbot (Gemini + DeepSeek) with agentic basket planning. Google Places API and Open Food Facts enrich product and store data. Resend handles email. Sentry for observability. Codemagic + GitHub for mobile CI/CD.`,
     technologies: [
       "Flutter",
       "Spring Boot",
       "Next.js",
       "PostgreSQL",
-      "Elasticsearch",
-      "Redis",
       "Firebase",
       "Cloudflare R2",
       "Gemini AI",
+      "DeepSeek",
       "Codemagic",
       "Sentry",
       "Railway",
@@ -121,7 +120,7 @@ Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL f
       },
       {
         src: taggoMobileSearch,
-        label: "Instant search with Elasticsearch",
+        label: "Instant product search",
         device: "mobile",
       },
       {
@@ -173,7 +172,7 @@ Integrated Google Gemini AI (Gemma 3) for a RAG-based chatbot with Text-to-SQL f
     featured: true,
     title: "MediBook — Healthcare Appointment System",
     subtitle:
-      "Designing and Developing Applications on Cloud (DDAC) · 2026 · Ongoing",
+      "Designing and Developing Applications on Cloud (DDAC) · 2026",
     description: `MediBook is a scalable, production-ready healthcare appointment system built as a comprehensive cloud computing project on AWS.
 
 Intentionally engineered to go far beyond baseline academic requirements, the system simulates a real-world enterprise-grade AWS environment. Patients can securely book appointments, interact with an AI-powered health assistant, and receive automated appointment reminders via email.
