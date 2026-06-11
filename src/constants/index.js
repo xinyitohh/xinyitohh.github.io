@@ -94,15 +94,16 @@ export const PROJECTS = [
 
 The system features a Flutter mobile app for consumer searches, a Next.js admin and merchant dashboard, and a Spring Boot REST API backend. Community-driven price submissions are validated through statistical anomaly detection, user trust scores, and peer reviews.
 
-Data is managed using NeonDB (PostgreSQL) for product and price history. Image uploads go through Cloudflare R2. Firebase Auth handles authentication across all clients. Resend powers merchant email notifications.
+Data is managed using NeonDB (PostgreSQL) for product and price history, with Elasticsearch powering the product search. Image uploads go through Cloudflare R2. Firebase Auth handles authentication across all clients. Resend powers merchant email notifications.
 
 Features a dual-provider AI chatbot (Gemini + DeepSeek) that extracts keywords from natural language queries to search live prices, with an agentic basket planner for budget-based shopping suggestions. Also integrates Google Places API for store enrichment and Open Food Facts for product data. Mobile CI/CD is automated via Codemagic, with Sentry for real-time error tracking.`,
-    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js admin/merchant dashboard on the frontend (deployed on Vercel), Spring Boot REST API backend (hosted on Railway), and NeonDB (PostgreSQL) on the data layer. Firebase Auth secures all clients. Cloudflare R2 handles image storage. Dual-provider AI chatbot (Gemini + DeepSeek) with agentic basket planning. Google Places API and Open Food Facts enrich product and store data. Resend handles email. Sentry for observability. Codemagic + GitHub for mobile CI/CD.`,
+    architectureDesc: `Three-tier architecture: Flutter mobile + Next.js admin/merchant dashboard on the frontend (deployed on Vercel), Spring Boot REST API backend (hosted on Railway), and NeonDB (PostgreSQL) + Elasticsearch on the data layer. Firebase Auth secures all clients. Cloudflare R2 handles image storage. Dual-provider AI chatbot (Gemini + DeepSeek) with agentic basket planning. Google Places API and Open Food Facts enrich product and store data. Resend handles email. Sentry for observability. Codemagic + GitHub for mobile CI/CD.`,
     technologies: [
       "Flutter",
       "Spring Boot",
       "Next.js",
       "PostgreSQL",
+      "Elasticsearch",
       "Firebase",
       "Cloudflare R2",
       "Gemini AI",
