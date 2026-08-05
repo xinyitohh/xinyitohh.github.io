@@ -205,7 +205,6 @@ Patient chatbot: Amazon Lex routes intents — booking requests invoke a Lambda 
       "Resend",
       "CI/CD",
     ],
-    demo: "https://medibook.xinyitoh.com",
     screenshots: [
       { src: mediBookChatbot1, label: "Patient AI chatbot", device: "desktop" },
       {
