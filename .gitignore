@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local settings (the WakaTime Worker address); see .env.example
+.env

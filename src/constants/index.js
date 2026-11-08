@@ -23,9 +23,9 @@ import mediBookChatbot4 from "/assets/projects/medibook/medibook_chatbot4.png";
 import mediBookReport1 from "/assets/projects/medibook/medibook_report1.png";
 import mediBookReport2 from "/assets/projects/medibook/medibook_report2.png";
 
-export const HERO_CONTENT = `Software Engineering student (CGPA 3.66) with production internship experience at iFAST Global Hub AI, building Flutter features across two live fintech apps shipped in Singapore and the UK.`;
+export const HERO_CONTENT = `Software Engineering graduate (CGPA 3.66) with production internship experience at iFAST Global Hub AI, building Flutter features across two live fintech apps shipped in Singapore and the UK.`;
 
-export const ABOUT_TEXT = `Software Engineering student from APU (CGPA 3.66). I interned at iFAST Global Hub AI building Flutter features for enterprise banking apps across Singapore and the UK, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
+export const ABOUT_TEXT = `Software Engineering graduate from APU (CGPA 3.66). I interned at iFAST Global Hub AI building Flutter features for enterprise banking apps across Singapore and the UK, which gave me hands-on experience in writing maintainable, production-grade code. I'm passionate about what I do and love inspiring others with it. (just like how others inspired me!)
 Outside of coding, I like to be in natural surroundings ^_^`;
 
 export const EXPERIENCES = [

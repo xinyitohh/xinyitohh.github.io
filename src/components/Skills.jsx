@@ -1,58 +1,5 @@
-import {
-  Python, Java, Dart, JavaScript, CPlusPlus, HTML5, CSS3,
-  Flutter, Spring, NextJs, React, CSharp, TailwindCSS, Docker, GitHubDark,
-  AWS, PostgreSQL, Redis, Elastic, Railway, DigitalOcean, VercelDark,
-  Git, GitLab, Jira, Firebase,
-} from "developer-icons";
 import { SKILLS } from "../constants/index";
-
-const ICON_MAP = {
-  // Languages
-  "Python":        Python,
-  "Java":          Java,
-  "Dart":          Dart,
-  "JavaScript":    JavaScript,
-  "C++":           CPlusPlus,
-  "HTML/CSS":      HTML5,
-  // Frameworks & Tools
-  "Flutter":       Flutter,
-  "Spring Boot":   Spring,
-  "Next.js":       NextJs,
-  "React":         React,
-  "ASP.NET":       CSharp,
-  "Tailwind CSS":  TailwindCSS,
-  "Docker":        Docker,
-  "GitHub Actions":GitHubDark,
-  "Git":           Git,
-  "GitLab":        GitLab,
-  "Jira":          Jira,
-  "Firebase":      Firebase,
-  // Cloud — AWS services all use the AWS logo
-  "AWS":                  AWS,
-  "Elastic Beanstalk":    AWS,
-  "S3":                   AWS,
-  "RDS":                  AWS,
-  "CloudFront":           AWS,
-  "Route 53":             AWS,
-  "Lambda":               AWS,
-  "API Gateway":          AWS,
-  "Lex":                  AWS,
-  "Bedrock":              AWS,
-  "Comprehend Medical":   AWS,
-  "EventBridge":          AWS,
-  "SQS":                  AWS,
-  "SNS/SES":              AWS,
-  "CloudWatch":           AWS,
-  "ECR":                  AWS,
-  // Other cloud
-  "Railway":       Railway,
-  "DigitalOcean":  DigitalOcean,
-  "Vercel":        VercelDark,
-  // Data
-  "PostgreSQL":    PostgreSQL,
-  "Redis":         Redis,
-  "Elasticsearch": Elastic,
-};
+import { ICON_MAP } from "../constants/skillIcons";
 
 const SkillPill = ({ name }) => {
   const IconComponent = ICON_MAP[name];

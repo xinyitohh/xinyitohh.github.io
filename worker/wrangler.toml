@@ -1,0 +1,7 @@
+name = "wakatime-proxy"
+main = "index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# The timezone your WakaTime account uses (see wakatime.com/settings/account), e.g. Asia/Singapore
+TZ = "Asia/Singapore"

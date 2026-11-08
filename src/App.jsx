@@ -7,12 +7,18 @@ import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import BookWall from './components/BookWall';
+import Typing from './components/Typing';
+import GitHubActivity from './components/GitHubActivity';
+import Visitors from './components/Visitors';
+import Outline from './components/Outline';
+import WakaTime from './components/WakaTime';
 
 const App = () => {
   return (
     <div className="min-h-screen bg-white">
       <div className="fixed inset-0 -z-10 bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]" />
       <Navbar />
+      <Outline />
       <main>
         <Hero />
         <About />
@@ -21,7 +27,11 @@ const App = () => {
         <Certifications />
         <Projects />
         <Contact />
+        <GitHubActivity />
+        <WakaTime />
+        <Typing />
         <BookWall />
+        <Visitors />
       </main>
     </div>
   );

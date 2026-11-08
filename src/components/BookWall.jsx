@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { collection, addDoc, getDocs, orderBy, query, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { BOOKS } from "../constants/index";
+import MessageItem from "./MessageItem";
 
 const COOLDOWN_KEY = "msgWallLastSubmit";
 const COOLDOWN_MS = 60 * 60 * 1000; // 1 hour
@@ -9,15 +10,6 @@ const COOLDOWN_MS = 60 * 60 * 1000; // 1 hour
 const canSubmit = () => {
   const last = localStorage.getItem(COOLDOWN_KEY);
   return !last || Date.now() - Number(last) > COOLDOWN_MS;
-};
-
-const timeAgo = (date) => {
-  if (!date) return "";
-  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-  if (seconds < 60) return "just now";
-  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-  return `${Math.floor(seconds / 86400)}d ago`;
 };
 
 const STATUS_CONFIG = {
@@ -115,7 +107,7 @@ const BookWall = () => {
             maxLength={100}
             placeholder="Leave a message, suggest a book, say hi..."
             disabled={status === "submitting"}
-            className="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 transition-colors"
+            className="flex-1 min-w-0 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 transition-colors"
           />
           <button
             type="submit"
@@ -140,19 +132,7 @@ const BookWall = () => {
           {messages.length === 0 ? (
             <p className="text-sm text-gray-400">Nothing here yet — leave the first message!</p>
           ) : (
-            messages.map(msg => (
-              <div key={msg.id} className="flex items-start gap-3 px-4 py-3 bg-gray-50 rounded-xl">
-                <div className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 text-xs text-indigo-500 font-semibold select-none">
-                  👤
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm text-gray-700 break-words">{msg.text}</p>
-                </div>
-                <span className="text-xs text-gray-300 flex-shrink-0 pt-0.5">
-                  {msg.createdAt?.toDate ? timeAgo(msg.createdAt.toDate()) : "just now"}
-                </span>
-              </div>
-            ))
+            messages.map(msg => <MessageItem key={msg.id} msg={msg} />)
           )}
         </div>
       </div>

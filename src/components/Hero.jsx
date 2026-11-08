@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
         <div className="flex-1 text-center lg:text-left">
           <p className="text-sm font-medium text-indigo-500 uppercase tracking-widest mb-4">
-            Software Engineering Student
+            Software Engineering Graduate
           </p>
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-5 leading-tight">
             Hi, I'm Xin Yi
