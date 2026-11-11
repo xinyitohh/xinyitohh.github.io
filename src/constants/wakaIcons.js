@@ -20,6 +20,8 @@ import windsurfSvg from "@lobehub/icons-static-svg/icons/windsurf.svg";
 import qoderSvg from "@lobehub/icons-static-svg/icons/qoder-color.svg";
 import opencodeSvg from "@lobehub/icons-static-svg/icons/opencode.svg";
 import clineSvg from "@lobehub/icons-static-svg/icons/cline.svg";
+// DBeaver logo: DBeaver developers, Apache License 2.0, via Wikimedia Commons
+import dbeaverPng from "../assets/icons/dbeaver.png";
 import { FaWindows, FaApple, FaLinux } from "react-icons/fa";
 import {
   LuCodeXml, LuBox, LuTerminal,
@@ -29,13 +31,18 @@ import {
 } from "react-icons/lu";
 
 // <img> (not inline SVG) so the SVGs' internal ids can't clash on one page.
-const img = (src) =>
+// `zoom` > 1 scales the picture up inside its box, for logos that come with empty margins.
+const img = (src, zoom = 1) =>
   function LobeIcon({ size = 18 }) {
-    return createElement("img", { src, width: size, height: size, alt: "", draggable: false });
+    return createElement("img", {
+      src, width: size, height: size, alt: "", draggable: false,
+      style: zoom === 1 ? undefined : { transform: `scale(${zoom})` },
+    });
   };
 
 const EDITOR_RULES = [
   [/antigravity/i, img(antigravitySvg)],
+  [/dbeaver/i, img(dbeaverPng, 1.25)],
   [/vs ?code|visual studio code/i, VisualStudioCode],
   [/claude code/i, img(claudeCodeSvg)],
   [/claude/i, img(claudeSvg)],
